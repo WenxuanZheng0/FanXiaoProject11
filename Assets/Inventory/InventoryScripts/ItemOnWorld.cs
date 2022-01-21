@@ -6,7 +6,7 @@ public class ItemOnWorld : MonoBehaviour
 {
     public Item thisItem;
     public Inventory playerInventory;
-
+    /*
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -15,9 +15,11 @@ public class ItemOnWorld : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    */
 
     public void AddNewItem()
     {
+        Debug.Log("canPick");
         if (playerInventory.itemList.Contains(thisItem))
         {
             playerInventory.itemList.Add(thisItem);

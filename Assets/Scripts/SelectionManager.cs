@@ -25,6 +25,7 @@ public class SelectionManager : MonoBehaviour
         float distance = 10000;
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
+        
         if (selectionTrans != null)
         {
             //var selectionRenderer = selectionTrans.GetComponent<Renderer>();
@@ -40,6 +41,7 @@ public class SelectionManager : MonoBehaviour
         {
             var selection = hit.transform;
             distance = (transform.position - selection.position).sqrMagnitude;
+            ItemOnWorld itemOnWorld = hit.transform.GetComponent<ItemOnWorld>();
             if (selection.CompareTag(selectableTag) && distance < 4)
             {
                 //var selectionRender = selection.GetComponent<Renderer>();
@@ -49,7 +51,12 @@ public class SelectionManager : MonoBehaviour
                 //    //selectionCanvas.enabled = true;
                 //    //selectionRender.material = HighLightMaterial;
                 //}
-
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    itemOnWorld.AddNewItem();
+                    selection.gameObject.SetActive(false);
+                    //Debug.Log("canPick");
+                }
                 pickUpCanvas.SetActive(true);
                 selectionTrans = selection;
             }

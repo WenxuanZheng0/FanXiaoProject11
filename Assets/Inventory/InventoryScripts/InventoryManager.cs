@@ -25,6 +25,5 @@ public class InventoryManager : MonoBehaviour
         newItem.gameObject.transform.SetParent(instance.slotGrid.transform);
         newItem.slotItem = item;
         newItem.slotImage.sprite = item.itemImage;
-        newItem.slotNum.text = item.itemHeld.ToString();
     }
 }
