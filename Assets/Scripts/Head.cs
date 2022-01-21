@@ -10,22 +10,29 @@ public class Head : MonoBehaviour
     public float speed;
     public float XmouseSpeed;
     public float YmouseSpeed;
+    //public AudioClip walk;
     void Start()
     {
         head = transform;
         body = transform.parent;
         rigidbody = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
+        
     }
 
     void Update()
     {
         float hroitzonal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
+      
+
         Vector3 dir = new Vector3(hroitzonal, 0, vertical);
         if(dir != Vector3.zero)
+
         {
+           // AudioSource.PlayClipAtPoint(walk, transform.position);
             body.Translate(dir * Time.deltaTime * speed);
+           
         }
         float mousex = Input.GetAxis("Mouse X");
         if(mousex != 0)
