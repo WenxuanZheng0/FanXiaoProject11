@@ -76,6 +76,8 @@
     <Compile Include="Assets\Models\doors2\Modern Doors Pack\Scripts\Keyring.cs" />
     <Compile Include="Assets\Models\doors2\Modern Doors Pack\Scripts\LockedDoor.cs" />
     <Compile Include="Assets\Models\doors2\Modern Doors Pack\Scripts\TrapDoor.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueContent.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\Head.cs" />
     <Compile Include="Assets\Scripts\Menu\PlayButton.cs" />
     <Compile Include="Assets\Scripts\SelectionManager.cs" />
