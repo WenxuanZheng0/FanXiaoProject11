@@ -7,4 +7,7 @@ public class Slot : MonoBehaviour
 {
     public Item slotItem;
     public Image slotImage;
+
+    public GameObject slotObject;
+
 }

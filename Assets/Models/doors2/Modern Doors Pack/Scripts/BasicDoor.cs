@@ -15,22 +15,26 @@ public class BasicDoor : MonoBehaviour {
 	public AudioClip openSound; //The door opening sound effect (3D sound.)
 	public AudioClip closeSound; //The door closing sound effect (3D sound.)
 	
-	private bool inTrigger = false; //Bool to check if CharacterController is in the trigger.
+	public static bool inTrigger = false; //Bool to check if CharacterController is in the trigger.
 	private bool doorOpen = false; //Bool used to check the state of the door, if it's open or not.
-	
-	//Door opening and closing function. Can be called upon from other scripts.
-	public void doorOpenClose() {
+
+    //Door opening and closing function. Can be called upon from other scripts.
+    public void doorOpenClose() {
 		//Check so that we're not playing an animation already.
 		if (doorChild.GetComponent<Animation>().isPlaying == false) {
-			//Check the state of the door, to determine whether to close or open.
-			if (doorOpen == false) {
-				//Opening door, play Open animation and sound effect.
-				doorChild.GetComponent<Animation>().Play("Open");
+            //Debug.Log("isPlaying==flase");
+            //Check the state of the door, to determine whether to close or open.
+            if (doorOpen == false) {
+                //Debug.Log("doorOpen==false");
+                //Opening door, play Open animation and sound effect.
+                doorChild.GetComponent<Animation>().Play("Open");
 				audioChild.GetComponent<AudioSource>().clip = openSound;
 				audioChild.GetComponent<AudioSource>().Play();
 				doorOpen = true;
+                //Debug.Log("canOpen");
 			}
 			else {
+                //Debug.Log("else");
 				//Closing door, play Close animation and sound effect.
 				doorChild.GetComponent<Animation>().Play("Close");
 				audioChild.GetComponent<AudioSource>().clip = closeSound;
@@ -59,9 +63,11 @@ public class BasicDoor : MonoBehaviour {
 		if (inTrigger == true) {
 			//If inTrigger is true, check for button press to interact with door.
 			//For this sample behaviour, we're checking for Fire2, which defaults to the right mouse button.
-			if (Input.GetButtonDown("Fire2")) {
-				doorOpenClose();
-			}
+			//if (Input.GetButtonDown("Fire2")) {
+			doorOpenClose();
+            inTrigger = false;
+			//}
 		}
+        
 	}
 }
