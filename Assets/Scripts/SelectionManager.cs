@@ -42,7 +42,7 @@ public class SelectionManager : MonoBehaviour
             var selection = hit.transform;
             distance = (transform.position - selection.position).sqrMagnitude;
             ItemOnWorld itemOnWorld = hit.transform.GetComponent<ItemOnWorld>();
-            if (selection.CompareTag(selectableTag) && distance < 4)
+            if (selection.CompareTag(selectableTag) && distance < 4)//the object can be operated
             {
                 //var selectionRender = selection.GetComponent<Renderer>();
                 //var selectionCanvas = selection.GetComponentInChildren<Canvas>();
@@ -56,6 +56,10 @@ public class SelectionManager : MonoBehaviour
                     itemOnWorld.AddNewItem();
                     selection.gameObject.SetActive(false);
                     //Debug.Log("canPick");
+                }
+                if (Input.GetKeyDown(KeyCode.G))
+                {
+                    Debug.Log("OpenDoor");
                 }
                 pickUpCanvas.SetActive(true);
                 selectionTrans = selection;

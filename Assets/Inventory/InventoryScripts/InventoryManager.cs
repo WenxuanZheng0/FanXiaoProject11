@@ -21,6 +21,7 @@ public class InventoryManager : MonoBehaviour
 
     public static void CreateNewItem(Item item)
     {
+        Debug.Log("canAdd");
         Slot newItem = Instantiate(instance.slotPrefab,instance.slotGrid.transform.position,Quaternion.identity);
         newItem.gameObject.transform.SetParent(instance.slotGrid.transform);
         newItem.slotItem = item;

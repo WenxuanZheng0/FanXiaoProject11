@@ -19,15 +19,8 @@ public class ItemOnWorld : MonoBehaviour
 
     public void AddNewItem()
     {
-        Debug.Log("canPick");
-        if (playerInventory.itemList.Contains(thisItem))
-        {
-            playerInventory.itemList.Add(thisItem);
-            InventoryManager.CreateNewItem(thisItem);
-        }
-        else
-        {
-            thisItem.itemHeld += 1;
-        }
+        //Debug.Log("canPick");
+        playerInventory.itemList.Add(thisItem);
+        InventoryManager.CreateNewItem(thisItem);
     }
 }
