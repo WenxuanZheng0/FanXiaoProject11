@@ -60,6 +60,7 @@ public class SelectionManager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.G))
                 {
                     Debug.Log("OpenDoor");
+                    //BasicDoor.inTrigger = true;
                 }
                 pickUpCanvas.SetActive(true);
                 selectionTrans = selection;
