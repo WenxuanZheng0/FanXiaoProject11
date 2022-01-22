@@ -7784,7 +7784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddbc488570714864090d2ead7e8b4cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 3
   XmouseSpeed: 200
   YmouseSpeed: 200
 --- !u!82 &534669907
