@@ -12,6 +12,8 @@ public class SelectionManager : MonoBehaviour
 
     [SerializeField] private GameObject pickUpCanvas;
     private Transform selectionTrans;
+    public DialogueManager dialogueManager;
+
     private bool hasKey = false;
     private bool hasTape = false;
     public InventoryManager instance;
@@ -106,6 +108,7 @@ public class SelectionManager : MonoBehaviour
 
                 }
                 pickUpCanvas.SetActive(true);
+                DialogueTrigger(selection.name);
                 selectionTrans = selection;
             }
             //消耗掉钥匙并开门
@@ -120,4 +123,12 @@ public class SelectionManager : MonoBehaviour
         }
     }
 
+
+    private void DialogueTrigger(string name)
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            dialogueManager.DialogueJudge(name);
+        }
+    }
 }
